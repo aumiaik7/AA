@@ -47,13 +47,14 @@ int main (int argc, char *argv[])
 	}
 	
 	//default number of cores
-	string numOfCores = "16";
+	const char* numOfCores = "16";
 	//get number of cores from command line argument
 	if(argc == 2)
 	{
 		numOfCores = argv[1];
 	}
-	cout<<"There are "<<numWorkers<<" workers by default"<<endl);
+
+	cout<<"There are "<<numOfCores<<" workers working"<<endl;
 	//set number of cores
 	 __cilkrts_set_param("nworkers", numOfCores);
 	//start time	
@@ -70,7 +71,7 @@ int main (int argc, char *argv[])
 	}
 	
 	//calculate the time needed for sorting in seconds
-	double time = (stop.tv_sec+(double)stop.tv_usec/1000000) - (start.tv_sec+(double)start.tv_usec/1000000)	;	
+	double time = (end.tv_sec+(double)end.tv_usec/1000000) - (start.tv_sec+(double)start.tv_usec/1000000)	;	
 	cout<<endl<<"Sorting done in "<<time<< " seconds"<<endl;
 }
 

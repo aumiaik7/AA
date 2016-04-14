@@ -45,16 +45,16 @@ int main (int argc, char *argv[])
 	}
 
 	//default number of cores
-	string numOfCores = "16";
+	const char* numOfCores = "16";
 	//get number of cores from command line argument
 	if(argc == 2)
 	{
 		numOfCores = argv[1];
 	}
-	cout<<"There are "<<numWorkers<<" workers by default"<<endl);
-	//set number of cores
 	 __cilkrts_set_param("nworkers", numOfCores);
 	
+	cout<<"There are "<<numOfCores<<" workers working"<<endl;
+		
 	//start time	
 	gettimeofday(&start,NULL);
 	//start main operation
