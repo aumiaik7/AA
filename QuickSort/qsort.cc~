@@ -102,7 +102,7 @@ void quickSort(long int arr[], int left, int right) {
 		}
 	
 	};
-	//recursion done in parallel
+	//recursion done is parallel
 	if(left < j)
 	{
 		cilk_spawn //call the method asynchronously
