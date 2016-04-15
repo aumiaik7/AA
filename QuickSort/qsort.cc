@@ -18,7 +18,7 @@ void srand( unsigned seed );
 
 using namespace std;
 
-#define N 700000
+#define N 900000 
 
 void quickSort(long int arr[], int left, int right);
 
